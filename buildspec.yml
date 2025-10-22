@@ -9,12 +9,13 @@ phases:
       - npm install
   build:
     commands:
-      - echo "Zipping app for Elastic Beanstalk..."
-      - zip -r deploy.zip * .[^.]*
+      - echo "Preparing deployment package..."
+      # Ensure only the app files go into the ZIP, not the parent folder
+      - zip -r ../deploy.zip . -x "node_modules/*" "*.git*" "*.zip" 
   post_build:
     commands:
       - echo "Build completed on `date`."
 artifacts:
   files:
-    - deploy.zip
-    
+    - ../deploy.zip
+
