@@ -1,7 +1,7 @@
 {
   "name": "static-node-site",
   "version": "1.0.0",
-  "description": "Static website served via Node.js and Elastic Beanstalk",
+  "description": "Static site served with Node.js",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
